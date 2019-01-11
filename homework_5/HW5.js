@@ -122,3 +122,25 @@ function sortByCores() {
 }
 
 sortByCores();
+
+//Task 3
+let products = [
+    {title: 'prod1', price: 5.2}, {title: 'prod2', price: 0.18},
+    {title: 'prod3', price: 15}, {title: 'prod4', price: 25},
+    {title: 'prod5', price: 18.9}, {title: 'prod6', price: 8},
+    {title: 'prod7', price: 19}, {title: 'prod8', price: 63}
+];
+
+
+let filterCollection = function(products, min, max){
+    let result=[];
+    products.forEach(product => {
+      if(product.price > min && product.price < max)
+        result.push(product);
+    })
+    
+    result.sort((prev, next) => prev.price - next.price);
+    return result;
+}
+
+console.log(filterCollection(products, 15, 30));
