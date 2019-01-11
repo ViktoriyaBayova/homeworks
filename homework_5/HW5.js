@@ -131,16 +131,8 @@ let products = [
     {title: 'prod7', price: 19}, {title: 'prod8', price: 63}
 ];
 
-
-let filterCollection = function(products, min, max){
-    let result=[];
-    products.forEach(product => {
-      if(product.price > min && product.price < max)
-        result.push(product);
-    })
-    
-    result.sort((prev, next) => prev.price - next.price);
-    return result;
+let filterCollection = function(products, min, max) {
+    return products.filter(product => product.price >= min && product.price <= max).sort((prev, next) => prev.price - next.price);
 }
 
 console.log(filterCollection(products, 15, 30));
