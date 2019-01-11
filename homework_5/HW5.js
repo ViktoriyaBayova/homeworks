@@ -67,9 +67,7 @@ let arr = [12, 4, 50, 1, 0, 18, 40];
 
 // Task 3
 let words = ['yes', 'hello', 'no', 'easycode', 'what'];
-let wordLength = words.map(function(word) {
-    return word.length;
-});
+let wordLength = words.map(word => word.length);
 wordLength.some(element => element > 3);
 
 // Task 4
@@ -86,7 +84,7 @@ function sortByIndex() {
         return prev.index - next.index;
     }).reduce(function(accum, curr) {
         return accum + curr.char;
-      }, 0);
+      }, '');
 }
 
 sortByIndex();
