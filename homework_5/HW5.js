@@ -67,9 +67,7 @@ let arr = [12, 4, 50, 1, 0, 18, 40];
 
 // Task 3
 let words = ['yes', 'hello', 'no', 'easycode', 'what'];
-let wordLength = words.map(function(word) {
-    return word.length;
-});
+let wordLength = words.map(word => word.length);
 wordLength.some(element => element > 3);
 
 // Task 4
@@ -86,7 +84,7 @@ function sortByIndex() {
         return prev.index - next.index;
     }).reduce(function(accum, curr) {
         return accum + curr.char;
-      }, 0);
+      }, '');
 }
 
 sortByIndex();
@@ -124,3 +122,17 @@ function sortByCores() {
 }
 
 sortByCores();
+
+//Task 3
+let products = [
+    {title: 'prod1', price: 5.2}, {title: 'prod2', price: 0.18},
+    {title: 'prod3', price: 15}, {title: 'prod4', price: 25},
+    {title: 'prod5', price: 18.9}, {title: 'prod6', price: 8},
+    {title: 'prod7', price: 19}, {title: 'prod8', price: 63}
+];
+
+let filterCollection = function(products, min, max) {
+    return products.filter(product => product.price >= min && product.price <= max).sort((prev, next) => prev.price - next.price);
+}
+
+console.log(filterCollection(products, 15, 30));
